@@ -1,0 +1,11 @@
+version: '3'
+services:
+  tests:
+    image: aaronmwilliams/python-locust-testing
+    depends_on:
+      - "api"
+    command: ["./wait-for-api.sh"]
+  api:
+    image: aaronmwilliams/user-exercises-rest
+    ports:
+      - 8080:8080

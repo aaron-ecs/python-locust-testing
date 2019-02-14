@@ -1,0 +1,8 @@
+services:
+  - docker
+
+before_install:
+  - docker build . -t aaronmwilliams/python-locust-testing
+
+script:
+  -  docker-compose up --exit-code-from tests
